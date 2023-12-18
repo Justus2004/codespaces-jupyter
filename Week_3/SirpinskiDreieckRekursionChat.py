@@ -23,7 +23,7 @@ def main():
     order = int(input("Gib die Rekursionsstufe ein: "))
     size = 400
     turtle_obj = turtle.Turtle()
-    turtle_obj.speed(200000)
+    turtle_obj.speed(1)
     turtle_obj.penup()
     turtle_obj.goto(-size/2, -size/2*(3**0.5)/2)
     turtle_obj.pendown()
