@@ -1,7 +1,7 @@
 import random
 def eingabeBuchstaben():
     letter =0
-    while letter<=97 or letter>=122:
+    while letter<97 or letter>122:
         temp =False
         while(temp==False):
             try:
@@ -16,11 +16,13 @@ def eingabeBuchstaben():
 
 def woerterQuelle():
     woerter =["subtrahieren", "sagen", "silikon", "kerzen", "antennen", "elastisch", "fallschirm","posieren", "steckdose", "kinderfrau", "torpedieren"]
-    temp =None
-    random(0<=temp<len(woerter))
+    temp=random.randint(0,len(woerter))
+    char = list(woerter[temp])
+    return char
            
 def main():
     eingabeBuchstaben()
+    woerterQuelle()
     
 if __name__ == "__main__":
     main()
