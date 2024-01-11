@@ -1,82 +1,82 @@
 import turtle
 import math
-
+turtle1=turtle
 def hypotenuse(kathete):
     hypo = math.sqrt((kathete*kathete)*2)
     return hypo
 
-def draw_galgen_fuss():
+def draw_galgen_fuss(turtle1):
     # Startpunkt
-    turtle.penup()
-    turtle.goto(-180, -150)
-    turtle.pendown()
+    turtle1.penup()
+    turtle1.goto(-180, -150)
+    turtle1.pendown()
     # Galgenfuss
-    turtle.right(45)
-    turtle.forward(120)
-    turtle.right(180)
-    turtle.forward(120)
-    turtle.left(90)
-    turtle.forward(120)
-    turtle.left(180)
-    turtle.forward(120)
+    turtle1.right(45)
+    turtle1.forward(120)
+    turtle1.right(180)
+    turtle1.forward(120)
+    turtle1.left(90)
+    turtle1.forward(120)
+    turtle1.left(180)
+    turtle1.forward(120)
     
-def draw_galgen_stange():
-    turtle.left(45)
-    turtle.forward(250)
+def draw_galgen_stange(turtle1):
+    turtle1.left(45)
+    turtle1.forward(250)
     
-def draw_galgen_quer():
-    turtle.left(180)
-    turtle.forward(50)
-    turtle.left(135)
-    turtle.forward(hypotenuse(50))
-    turtle.right(45+180)
-    turtle.forward(50)
-    turtle.left(180)
+def draw_galgen_quer(turtle1):
+    turtle1.left(180)
+    turtle1.forward(50)
+    turtle1.left(135)
+    turtle1.forward(hypotenuse(50))
+    turtle1.right(45+180)
+    turtle1.forward(50)
+    turtle1.left(180)
     
-def draw_galgen_mast():
-    turtle.forward(200)
-    turtle.right(90)
+def draw_galgen_mast(turtle1):
+    turtle1.forward(200)
+    turtle1.right(90)
     
-def draw_galgen_seil():
-    turtle.forward(50)
-    turtle.right(90)
+def draw_galgen_seil(turtle1):
+    turtle1.forward(50)
+    turtle1.right(90)
 
-def draw_head():
-    turtle.circle(20)
-    turtle.left(90)
-    turtle.penup()
-    turtle.forward(40)
-    turtle.pendown()
+def draw_head(turtle1):
+    turtle1.circle(20)
+    turtle1.left(90)
+    turtle1.penup()
+    turtle1.forward(40)
+    turtle1.pendown()
     
 
-def draw_body():
-    turtle.forward(70)
-    turtle.right(180)
-    turtle.forward(40)
+def draw_body(turtle1):
+    turtle1.forward(70)
+    turtle1.right(180)
+    turtle1.forward(40)
 
-def draw_left_arm():
-    turtle.left(45)
-    turtle.forward(35)
-    turtle.right(180)
-    turtle.forward(35)
-    turtle.left(90)
+def draw_left_arm(turtle1):
+    turtle1.left(45)
+    turtle1.forward(35)
+    turtle1.right(180)
+    turtle1.forward(35)
+    turtle1.left(90)
 
-def draw_right_arm():
-    turtle.forward(35)
-    turtle.right(180)
-    turtle.forward(35)
-    turtle.left(45)
-    turtle.forward(40)
+def draw_right_arm(turtle1):
+    turtle1.forward(35)
+    turtle1.right(180)
+    turtle1.forward(35)
+    turtle1.left(45)
+    turtle1.forward(40)
 
-def draw_left_leg():
-    turtle.left(45)
-    turtle.forward(35)
-    turtle.right(180)
-    turtle.forward(35)
-    turtle.left(90)
+def draw_left_leg(turtle1):
+    turtle1.left(45)
+    turtle1.forward(35)
+    turtle1.right(180)
+    turtle1.forward(35)
+    turtle1.left(90)
 
-def draw_right_leg():
-    turtle.forward(35)
-    turtle.right(180)
-    turtle.forward(35)
-    turtle.left(45)
+def draw_right_leg(turtle1):
+    turtle1.forward(35)
+    turtle1.right(180)
+    turtle1.forward(35)
+    turtle1.left(45)
