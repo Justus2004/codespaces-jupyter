@@ -47,13 +47,13 @@ def woerterLoesen(turtle1, turtle2, turtle3):
                 inwort = True
             x += 1
         if inwort:
-            turtle3.write("Buchstabe vorhanden", align="center", font=("Arial", 14, "normal"))
+            turtle3.write("Buchstabe vorhanden", align="center", font=("Arial", 8, "normal"))
         else:
             count += 1
             draw(count, turtle1)
-            turtle2.write("Buchstabe nicht vorhanden!", align="center", font=("Arial", 14, "normal"))
+            turtle2.write("Buchstabe nicht vorhanden!", align="center", font=("Arial", 8, "normal"))
         print(wortlen)
-    turtle3.write("Glückwunsch! Wort erraten!", align="center", font=("Arial", 14, "normal"))
+    turtle3.write("Glückwunsch! Wort erraten!", align="center", font=("Arial", 8, "normal"))
 
 def testFertig(wortlen):
     return "_" in wortlen
