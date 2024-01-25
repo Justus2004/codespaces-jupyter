@@ -36,27 +36,40 @@ def woerterLoesen(turtle1, turtle2, turtle3,turtle4):
     wort = woerterQuelle()
     wortlen = leerWort(wort)
     while testFertig(wortlen):
+        if count >11:
+            break
+        
         inwort = False
         letter = eingabeBuchstaben()
         x = 0
         for i in wort:
+            
             if letter == wort[x]:
                 wortlen[x] = letter
                 inwort = True
+                
             x += 1
+            
         if inwort==True:
             turtle3.write("Buchstabe vorhanden", align="center", font=("Arial", 8, "normal"))
             turtle2.clear()
+            
         elif inwort==False:
             count += 1
             draw(count, turtle1)
             turtle2.write("Buchstabe nicht vorhanden!", align="center", font=("Arial", 8, "normal"))
             turtle3.clear()
+
         turtle4.clear()
         turtle4.write(wortlen)
     turtle2.clear()
     turtle3.clear()
-    turtle3.write("Glückwunsch! Wort erraten!", align="center", font=("Arial", 8, "normal"))
+    if testFertig(wortlen):
+        turtle3.write("Du hast zu viele Versuche gebraucht!", align="center", font=("Arial", 8, "normal"))
+    else:
+        turtle3.write("Glückwunsch! Wort erraten!", align="center", font=("Arial", 8, "normal"))
+        
+    time.sleep(20)
 
 def testFertig(wortlen):
     return "_" in wortlen
