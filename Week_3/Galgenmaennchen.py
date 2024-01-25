@@ -1,6 +1,7 @@
 import random
 import turtle
 import GLGMTurtel
+import time
 
 def eingabeBuchstaben():
     letter = 0
@@ -24,19 +25,18 @@ def eingabeBuchstaben():
     return letter
 
 def woerterQuelle():
-    woerter = ["Hallo"]
+    woerter = ["hallo"]
     # woerter = ["subtrahieren", "sagen", "silikon", "kerzen", "antennen", "elastisch", "fallschirm","posieren", "steckdose", "kinderfrau", "torpedieren"]
     temp = random.randint(0, len(woerter) - 1)
     char = list(woerter[temp])
     return char
 
-def woerterLoesen(turtle1, turtle2, turtle3):
+def woerterLoesen(turtle1, turtle2, turtle3,turtle4):
     count = 0
-    inwort = False
     wort = woerterQuelle()
     wortlen = leerWort(wort)
     while testFertig(wortlen):
-
+        inwort = False
         letter = eingabeBuchstaben()
         x = 0
         for i in wort:
@@ -44,15 +44,18 @@ def woerterLoesen(turtle1, turtle2, turtle3):
                 wortlen[x] = letter
                 inwort = True
             x += 1
-        if inwort:
+        if inwort==True:
             turtle3.write("Buchstabe vorhanden", align="center", font=("Arial", 8, "normal"))
             turtle2.clear()
-        else:
+        elif inwort==False:
             count += 1
             draw(count, turtle1)
             turtle2.write("Buchstabe nicht vorhanden!", align="center", font=("Arial", 8, "normal"))
             turtle3.clear()
-        print(wortlen)
+        turtle4.clear()
+        turtle4.write(wortlen)
+    turtle2.clear()
+    turtle3.clear()
     turtle3.write("Glückwunsch! Wort erraten!", align="center", font=("Arial", 8, "normal"))
 
 def testFertig(wortlen):
@@ -89,7 +92,7 @@ def draw(count, turtle1):
         case 11:
             GLGMTurtel.draw_right_leg(turtle1)
             
-def ausgabe(turtle2,turtle3):
+def ausgabe(turtle2,turtle3,turtle4):
     turtle2.penup()
     turtle2.left(90)
     turtle2.forward(250)
@@ -102,14 +105,20 @@ def ausgabe(turtle2,turtle3):
     turtle3.right(90)
     turtle3.forward(200)
     
+    turtle4.penup()
+    turtle4.left(90)
+    turtle4.forward(250)
+    turtle4.left(90)
+    turtle4.forward(200)
+    
 
 def main():
-    screen = turtle.Screen()
     turtle1 = turtle.Turtle()
     turtle2 = turtle.Turtle()
     turtle3 = turtle.Turtle()
-    ausgabe(turtle2,turtle3)
-    woerterLoesen(turtle1, turtle2, turtle3)
+    turtle4 = turtle.Turtle()
+    ausgabe(turtle2,turtle3,turtle4)
+    woerterLoesen(turtle1, turtle2, turtle3,turtle4)
 
 if __name__ == "__main__":
     main()
