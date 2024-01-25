@@ -25,8 +25,7 @@ def eingabeBuchstaben():
     return letter
 
 def woerterQuelle():
-    woerter = ["hallo"]
-    # woerter = ["subtrahieren", "sagen", "silikon", "kerzen", "antennen", "elastisch", "fallschirm","posieren", "steckdose", "kinderfrau", "torpedieren"]
+    woerter = ["subtrahieren", "sagen", "silikon", "kerzen", "antennen", "elastisch", "fallschirm","posieren", "steckdose", "kinderfrau", "torpedieren"]
     temp = random.randint(0, len(woerter) - 1)
     char = list(woerter[temp])
     return char
@@ -124,7 +123,6 @@ def ausgabe(turtle2,turtle3,turtle4):
     turtle4.left(90)
     turtle4.forward(200)
     
-
 def main():
     turtle1 = turtle.Turtle()
     turtle2 = turtle.Turtle()
