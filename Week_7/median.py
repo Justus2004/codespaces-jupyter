@@ -17,5 +17,10 @@ def berechne_median(liste):
 
     return median
 
-liste = [5, 2, 1, 3, 4]
+def berechne_arithmetisches_mittel(liste):
+    if len(liste) == 0:
+        return None
+    return sum(liste) / len(liste)
+
+liste = [5, 6, 3, 10, 10]
 print("Median:", berechne_median(liste))
