@@ -27,19 +27,15 @@ def play_game(user_choice):
     result = determine_winner(user_choice, computer_choice)
     messagebox.showinfo("Ergebnis", f"Du hast {user_choice} gewählt. Der Computer hat {computer_choice} gewählt.\n{result}")
 
-# GUI erstellen
 root = tk.Tk()
 root.title("Schere-Stein-Papier")
 
-# Benutzereingabe
 user_input_label = tk.Label(root, text="Wähle Schere, Stein oder Papier:")
 user_input_label.pack()
 user_input = tk.Entry(root)
 user_input.pack()
 
-# Button für Spiel starten
 play_button = tk.Button(root, text="Spiel starten", command=get_user_choice)
 play_button.pack()
 
-# GUI starten
 root.mainloop()
