@@ -37,9 +37,9 @@ def main():
     todo_list = TodoList()
 
     while True:
-        print("\n1. Add Todo Item")
-        print("2. Display Todo Items")
-        print("3. Complete Todo Item")
+        print("\n1. Zu Liste etwas hinzufügen")
+        print("2. Liste anzeigen")
+        print("3. Element der Liste als bearbeitet markieren")
         print("4. Exit")
 
         choice = input("Enter your choice: ")
