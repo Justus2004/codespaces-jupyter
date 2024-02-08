@@ -1,11 +1,13 @@
+import tkinter as tk
+from tkinter import messagebox
 import random
 
 def get_user_choice():
-    user_choice = input("Wähle Schere, Stein oder Papier: ").strip().lower()
+    user_choice = user_input.get().strip().lower()
     while user_choice not in ['schere', 'stein', 'papier']:
-        print("Ungültige Eingabe. Bitte wähle Schere, Stein oder Papier.")
-        user_choice = input("Wähle Schere, Stein oder Papier: ").strip().lower()
-    return user_choice
+        messagebox.showinfo("Ungültige Eingabe", "Bitte wähle Schere, Stein oder Papier.")
+        return
+    play_game(user_choice)
 
 def get_computer_choice():
     return random.choice(['schere', 'stein', 'papier'])
@@ -20,15 +22,24 @@ def determine_winner(user_choice, computer_choice):
     else:
         return "Der Computer gewinnt!"
 
-def play_game():
-    print("Willkommen beim Schere-Stein-Papier-Spiel!")
-    play_again = True
-    while play_again:
-        user_choice = get_user_choice()
-        computer_choice = get_computer_choice()
-        print(f"Du hast {user_choice} gewählt. Der Computer hat {computer_choice} gewählt.")
-        print(determine_winner(user_choice, computer_choice))
-        play_again_input = input("Möchtest du noch einmal spielen? (ja/nein): ").strip().lower()
-        play_again = play_again_input == 'ja'
+def play_game(user_choice):
+    computer_choice = get_computer_choice()
+    result = determine_winner(user_choice, computer_choice)
+    messagebox.showinfo("Ergebnis", f"Du hast {user_choice} gewählt. Der Computer hat {computer_choice} gewählt.\n{result}")
 
-play_game()
+# GUI erstellen
+root = tk.Tk()
+root.title("Schere-Stein-Papier")
+
+# Benutzereingabe
+user_input_label = tk.Label(root, text="Wähle Schere, Stein oder Papier:")
+user_input_label.pack()
+user_input = tk.Entry(root)
+user_input.pack()
+
+# Button für Spiel starten
+play_button = tk.Button(root, text="Spiel starten", command=get_user_choice)
+play_button.pack()
+
+# GUI starten
+root.mainloop()
